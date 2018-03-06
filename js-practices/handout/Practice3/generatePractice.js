@@ -8,6 +8,7 @@ function generate(testLengthArray){
       for (var j = 0; j < testLengthArray[i]; j++) {
         input.push(Math.random(-10000,10000));
       }
+      sort(input);
       var target;
       target = Math.random (11000, -11000);
       result.push( {
@@ -41,6 +42,20 @@ function Search(input, target) {
       return i;
       else return -1;
   }
+}
+
+function sort(input) {
+  for (var i = 0; i < input.length; i++) {
+    for (var j = i + 1; j < input.length; j++) {
+      var temp;
+      if (input[i] > input[j]) {
+          temp = input[i];
+          input[i] = input[j];
+          input[j] = temp;
+      }
+    }
+  }
+  return input;
 }
 
 module.exports = generate

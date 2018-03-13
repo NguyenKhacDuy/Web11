@@ -2,13 +2,15 @@
 
 function search(input, target) {
   if(typeof(target) != "undefinded"){
-    for(var i = 0; i < input.length; i++ ) {
+    for(let i = 0; i < input.length; i++ ) {
       if (input[i] == target) {
         return i;
+        break;
       }
-      return -1;
+      else i = -1;
     }
-  }     
+  }  
+  return i;   
 }
 
 

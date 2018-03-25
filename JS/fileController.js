@@ -9,16 +9,16 @@ let readFile = (path, onReadFileDone) => {
     });
 }
 
+let readFileSync = (path) => {
+    return JSON.parse(fs.readFileSync(path, 'utf-8'));
+}
+
 let writeFile = (path, writeData, onWriteDataSuccess) => {
-    fs.writeFile(path, writeData, (err) => {
-        if(err) {
-            console.log(err);
-        }
-        onWriteDataSuccess("Success");
-    })
+    fs.writeFile(path,JSON.stringify(writeData), onWriteDataSuccess);
 }
 
 module.exports = {
     readFile,
-    writeFile
+    writeFile,
+    readFileSync
 }

@@ -1,0 +1,17 @@
+<h1 class="text-center">Question: {{question.questionContent}}</h1>
+
+<form action="answer"{{question.id}} method="POST">
+    <div class="col-md-6 text-center">
+    <a href="/answer/{{question.id}}/no" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up"></span>Đúng/Có/Phải</a>
+    </div>
+    <div class="col-md-6 text-center">
+    <a href="/answer/{{question.id}}/yes" class="btn btn-primary"><span class="glyphicon glyphicon-thumbs-down"></span>Sai/Không/Trái</a>
+    </div>
+
+    <div class="col-md-12 text-center">
+        <a href="" class="btn btn-default">Ket qua vote</a>
+        <a href="" class="btn btn-default">Cau hoi khac</a>
+    </div>
+    {{!-- <input type="submit" name="answer" class="btn btn-danger" value="yes">
+    <input type="submit" name="answer" class="btn btn-primary" value="no"> --}}
+</form>
